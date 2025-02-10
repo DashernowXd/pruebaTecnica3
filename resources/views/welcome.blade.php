@@ -57,6 +57,9 @@
                 text-decoration: none;
                 text-transform: uppercase;
             }
+            .links > a:hover {
+                color: #000000;
+            }
 
             .m-b-md {
                 margin-bottom: 30px;
@@ -72,8 +75,7 @@
 
 
                 <div class="links">
-                    <a href="{{ route('login') }}" class="btn btn-primary">inicio de sesion</a> 
-                    <a href="#">Salida</a>   
+                    <a href="{{ route('login') }}" class="btn btn-primary">inicio de sesion</a>   
                 </div>
             </div>
         </div>

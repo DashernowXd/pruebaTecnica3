@@ -19,11 +19,17 @@ class createController extends Controller
         return view('createStudent');
     }
 
+    public function interfaceGroup(){
+        return view('createGroup');
+    }
+
     public function createGroup(Request $request) {
         $group = new Group();
         $group->name = $request->name;
         $group->teacherId = $request->teacherId;
         $group->numStudents = $request->numStudents;
+        $group->swift=$request->swift;
+        $group->grade=$request->grade;
         $group->save();
         return response()->json($group);
     }

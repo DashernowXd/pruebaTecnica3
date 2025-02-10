@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class GroupsTable extends Migration
+class AddTimestampsToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class GroupsTable extends Migration
      */
     public function up()
     {
-        Schema::create('groups', function (Blueprint $table) {
-            $table->integer('id');
-            $table->string('name');
-            $table->String('teacherId');
-            $table->integer('numStudents');
-            $table->string('swift');
-            $table->integer('grade');
+        Schema::table('users', function (Blueprint $table) {
+            //
+            $table->timestamps();
         });
     }
 
@@ -30,6 +26,8 @@ class GroupsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('groups');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropTimestamps();
+        });
     }
 }

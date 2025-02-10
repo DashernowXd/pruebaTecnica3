@@ -10,20 +10,46 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Vista de Bienvenida
+Route::get('/', function () {return view('welcome');});
 
+//vistas para el inico de sesion
+Route::view('/login', 'login')->name('login');
+Route::get('/logout', 'LoginAdmin@logout')->name('auth.logout');
 
-Route::get('/dashboard', 'dashboardcontroler@dashboard')->name('dashboard');
-Route::get('/createStudent', 'createController@interfaceCreate') ->name('createInterface');
-Route::get('/deleteControler', 'deleteContoler@showInterface')->name('delInterface');
-Route::get('/login', 'LoginAdmin@index')->name('login');
+//vista del dashboard
+Route::get('/dashboard','dashboardcontroler@dashboard')->name('dashboard');
 Route::get('/dashboard', 'dashboardcontroler@dashboard')->middleware('auth');
-Route::get('/updateStudent', 'updateController@showInterface')->name('updateInterface');
-Route::get('/', function () {
-    return view('welcome');
-});
 
+//Vistas de creación
+Route::get('/createStudentIntf', 'createController@interfaceCreate') ->name('createStudentIntf'); 
+Route::get('/createGroup', 'createController@interfaceGroup')->name('createGroupIntf');
+
+// Vistas de eliminación
+Route::get('/deleteStudentIntf', 'deleteController@showInterface')->name('delStudentIntf');
+Route::get('/delGroupIntf', 'deleteController@showInterfaceGroup')->name('delGroupIntf');
+
+//vistas de actualización
+Route::get('/updateStudentIntf', 'updateController@showInterface')->name('updateStudentIntf');
+Route::get('/updateGroupIntf', 'updateController@updateGroup')->name('updateGroupIntf');
+
+// vista de muestra de tablas
+Route::get('/showTableStudent', 'showTController@showTableStudents')->name('tableStudentIntf');
+Route::get('/showTableGroups', 'showTController@showTableGroups')->name('tableGroupsIntf');
+
+
+
+
+//Logica del login
 Route::post('/login', 'LoginAdmin@login')->name('auth.login');
+
+// Logica para estudiante
 Route::post('/createStudent', 'createController@registerStudent')->name('createStudent');
 Route::post('/deleteStudent', 'deleteController@deleteStudent')->name('deleteStudent');
-Route::post('/createGroup', 'createController@createGroup')->name('createGroup');
 Route::post('/updateStudent', 'updateController@updateStudent')->name('updateStudent');
+
+// Logica para los grupos
+Route::post('/createGroup', 'createController@createGroup')->name('postCreateGroup');
+Route::post('/deleteGroup', 'deleteController@deleteGroup')->name('postDelGroup');
+Route::post('/updateGroup', 'updateController@updateGroup')->name('postUptGroup');
+

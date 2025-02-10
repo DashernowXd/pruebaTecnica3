@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,19 +9,27 @@
     <title>Document</title>
 </head>
 <body>
+    @include('partials.nav')
     <div class="container">
         <div class="row justify-content-center">
         
 
-            <div class="col-12">
-                <button type="button" class="btn btn-primary btn-lg btn-block">Registrar Alumno</button>
-                <button type="button" class="btn btn-secondary btn-lg btn-block">Baja de alumno</button>
-                <button type="button" class="btn btn-primary btn-lg btn-block"> Mostrar Grupos</button>
-                <button type="button" class="btn btn-secondary btn-lg btn-block">Mostrar Alumnos</button>
+            <div class="col-md-6">
+                <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href='{{route('createStudentIntf')}}'">Registrar Alumno</button>
+                <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href='{{route('deleteStudent')}}'">Baja de alumno</button>
+                <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href='{{route('updateStudentIntf')}}'">Actualizar Alumno</button>
+                <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href='{{route('tableStudentIntf')}}'">Mostrar Alumnos</button>
                 
             </div>
-            <div class="col-12">
-                <button class="btn btn-danger">Cerrar Sesion</button>
+            <div class="col-md-6">
+                <button type="button" class="btn btn-secondary btn-lg btn-block" onclick="window.location.href='{{route('createGroupIntf')}}'">Crear grupo</button>
+                <button type="button" class="btn btn-secondary btn-lg btn-block" onclick="window.location.href='{{route('delGroupIntf')}}'">Eliminar grupo</button>
+                <button type="button" class="btn btn-secondary btn-lg btn-block" onclick="window.location.href='{{route('updateGroupIntf')}}'">Actualizar grupo</button>
+                <button type="button" class="btn btn-secondary btn-lg btn-block" onclick="window.location.href='{{route('tableGroupsIntf')}}'">Mostrar Grupo</button>
+
+            </div>
+            <div class="row">
+                <button class="btn btn-danger" onclick= "window.location.href='{{route('auth.logout')}}'">cerrar sesión</button>
             </div>
            
         </div>

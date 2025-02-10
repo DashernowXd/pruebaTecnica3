@@ -6,9 +6,8 @@ use Illuminate\Support\Facades\Hash;
 
 $factory->define(User::class, function (Faker $faker) {
     return [
-        'username' => $faker->username,
-        'password' => Hash::make('password'), // Hasheamos la contraseña
+        'username' => $faker->unique()->username,
+        'password' => Hash::make('password'),
     ];
 });
-
 ?>

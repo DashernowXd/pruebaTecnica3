@@ -10,7 +10,7 @@
 <body class="d-flex align-items-center py-4 bg-body-tertiary">
 
 <main class="form-signin w-100 m-auto">
-    <form method="POST" action="{{ route('login') }}">
+    <form method="POST" action="{{ route('auth.login') }}">
         @csrf
         <h1 class="h3 mb-3 fw-normal">Inicio de sesión</h1>
 
@@ -33,7 +33,8 @@
             </label>
         </div>
 
-        <button class="btn btn-primary w-100 py-2" type="submit">Iniciar sesión</button>
+        <button class="btn btn-primary d-grid" type="submit">Iniciar sesión</button>
+        <button class="btn btn-primary d-grid" type="button" onclick="window.location.href='/'">Volver al inicio</button>
     </form>
 </main>
 

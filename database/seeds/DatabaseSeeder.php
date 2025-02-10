@@ -1,5 +1,5 @@
 <?php
-
+use App\Student_model;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -11,6 +11,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        factory(Student_model::class, 50)->create(); // Crea 50 registros
     }
 }

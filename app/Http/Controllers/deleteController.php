@@ -11,11 +11,21 @@ class deleteController extends Controller
         return view('DeleteStudent');
     }
 
+    public function showInterfaceGroup()
+    {
+        return view('deleteGroup');
+
+    }
+
     public function deleteStudent(Request $request)
     {
         $student = Student::find($request->id);
         $student->delete();
         return response()->json($student);
+    }
+
+    public function deleteGroup(){
+        
     }
 
 
