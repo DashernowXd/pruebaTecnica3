@@ -40,15 +40,11 @@
             
             <div class="d-grid flex">
                 <button type="submit" class="btn btn-primary">Registrar</button>
-                <button class="btn btn-primary" onclick="window.location.href='{{route('')}}'" type="button">Regresar</button>
+                <button class="btn btn-primary" onclick="window.location.href='{{route('dashboard')}}'" type="button">Regresar</button>
             </div>
         
     </div>
     
 </body>
 </html>
-<script src=>
-    function sendData(){
-        //
-    }
-</script>
+

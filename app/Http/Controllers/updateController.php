@@ -11,6 +11,11 @@ class updateController extends Controller
         return view('updateStudent');
     }
 
+    public function showInterfaceGroup()
+    {
+        return view('updateGroup');
+    }
+
     public function updateStudent(Request $request)
     {
         $student = Student::find($request->id);

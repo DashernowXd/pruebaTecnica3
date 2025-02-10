@@ -19,9 +19,8 @@ class deleteController extends Controller
 
     public function deleteStudent(Request $request)
     {
-        $student = Student::find($request->id);
-        $student->delete();
-        return response()->json($student);
+        
+        
     }
 
     public function deleteGroup(){

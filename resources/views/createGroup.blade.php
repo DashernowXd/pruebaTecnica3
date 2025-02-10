@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <style href="{{asset('css/app.css')}} " rel="stylesheet"></style>
-    <title>Document</title>
+    <title>Crear Grupo</title>
 </head>
 <body>
     @include('partials.nav')
     <div class="container">
         <form action="" method="POST">
             <div class="form-group">
-                <label for="">Id</label>
+                <label for="">matricula</label>
                 <input type="text" class="form-control">
     
                 <label for="">Nombre</label>

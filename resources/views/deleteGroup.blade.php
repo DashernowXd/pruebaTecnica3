@@ -9,38 +9,39 @@
 <body>
     @include('partials.nav')
     <div class="container">
-        <form action="">
+        <form action="{{route('searchGroupDown')}}">
             <div class="form-group">
                 <h2>Buscar grupo</h2>
                 <label for="matricula">matricula</label>
                 <input type="text" class="form-control" name="matricula" id="matriculla" placeholder="matricula">
-                <button class="btn btn-primary d-grid">Buscar</button>
+                <button class="btn btn-primary d-grid" type="submit">Buscar</button>
             </div>
         </form>
-        
-        <form action="">
+        @if(@isset($group))
+        <form action="{{route('postDelGroup')}}" method="POST">
             <label for="">Nombre</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="nombre" value="{{$group->name}}" >
             
             <label for="">Matricula profesor</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="teacherId" value="{{$group->teacherId}}">
             
             <label for="">Numero de alumnos</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name=numStudents value="{{$group->numStudents}}">
             
             <label for="">Turno</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="swift"  value="{{$group->swift}}">
             
             <label for="">Semestre</label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name value="{{$group->grade}}">
 
 
             <div class="d-grid flex">
                 <button class="btn btn-danger" type="submit">Eliminar</button>
-                <button class="btn btn-primary" type="button" onclick="window.location.href='dashboard'">Regresar</button>
+                <button class="btn btn-primary" type="button" onclick="window.location.href='{{route('createStudentIntf')}}'">Regresar</button>
             </div>
 
         </form>
+        @endif
 
        
     </div>

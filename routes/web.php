@@ -18,7 +18,7 @@ Route::view('/login', 'login')->name('login');
 Route::get('/logout', 'LoginAdmin@logout')->name('auth.logout');
 
 //vista del dashboard
-Route::get('/dashboard','dashboardcontroler@dashboard')->name('dashboard');
+Route::get('/dashboardIntf','dashboardcontroler@dashboard')->name('dashboard');
 Route::get('/dashboard', 'dashboardcontroler@dashboard')->middleware('auth');
 
 //Vistas de creación
@@ -31,14 +31,25 @@ Route::get('/delGroupIntf', 'deleteController@showInterfaceGroup')->name('delGro
 
 //vistas de actualización
 Route::get('/updateStudentIntf', 'updateController@showInterface')->name('updateStudentIntf');
-Route::get('/updateGroupIntf', 'updateController@updateGroup')->name('updateGroupIntf');
+Route::get('/updateGroupIntf', 'updateController@showInterfaceGroup')->name('updateGroupIntf');
 
 // vista de muestra de tablas
-Route::get('/showTableStudent', 'showTController@showTableStudents')->name('tableStudentIntf');
+Route::get('/showTableStudent', 'showTController@showStudent')->name('tableStudentIntf');
 Route::get('/showTableGroups', 'showTController@showTableGroups')->name('tableGroupsIntf');
 
+// busqueda alumno
+Route::get('/searchStudentForUp', 'showTController@searchStudentForUp')->name('searchStuUp');
+Route::get('/searchStudentForDown', 'showTController@searchStudentForDown')->name('searchStuDown');
 
+//busqueda Grupo
+Route::get('/searchGroupForUp', 'showTController@searchGroupForUp')->name('searchGroupUp');
+Route::get('/searhGroupForDown', 'showTController@searchGroupforDown')->name('searchGroupDown');
 
+Route::get('/searchStudentForUp/{matricula}', 'showTController@searchStudForUpBtn')->name('searchStuBtnUp');
+Route::get('/searchStudentForDown/{matricula}', 'showTController@searchStudForDownBtn')->name('searchStuBtnDown');
+
+Route::get('/searchGroupForUp/{matricula}', 'showTController@searchGrpForUpBtn')->name('searchGrpBtnUp');
+Route::get('/searchGroupForDown/{matricula}', 'showTController@searchGrpForDownBtn')->name('searchGrpBtnDown');
 
 //Logica del login
 Route::post('/login', 'LoginAdmin@login')->name('auth.login');

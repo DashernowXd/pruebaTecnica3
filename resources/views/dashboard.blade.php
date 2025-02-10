@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="../css/app.css " rel="stylesheet">
-    <title>Document</title>
+    <title>Dashboard</title>
 </head>
 <body>
     @include('partials.nav')
@@ -16,7 +16,7 @@
 
             <div class="col-md-6">
                 <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href='{{route('createStudentIntf')}}'">Registrar Alumno</button>
-                <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href='{{route('deleteStudent')}}'">Baja de alumno</button>
+                <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href='{{route('delStudentIntf')}}'">Baja de alumno</button>
                 <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href='{{route('updateStudentIntf')}}'">Actualizar Alumno</button>
                 <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href='{{route('tableStudentIntf')}}'">Mostrar Alumnos</button>
                 

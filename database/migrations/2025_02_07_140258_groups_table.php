@@ -14,12 +14,14 @@ class GroupsTable extends Migration
     public function up()
     {
         Schema::create('groups', function (Blueprint $table) {
-            $table->integer('id');
+            $table->id();
+            $table->integer('matricula');
             $table->string('name');
             $table->String('teacherId');
             $table->integer('numStudents');
             $table->string('swift');
             $table->integer('grade');
+            $table->timestamps();
         });
     }
 
